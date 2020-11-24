@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+    <title>Mask Demo</title>
+  </head>
+  <!--向父窗口传递消息-->
+  
+  <body>  
+    <h2>这是弹出的子窗口</h2>
+    <button onclick="sendMessageToParent()">向父窗口传递信息</button>
+  </body>
+  <script>
+      function sendMessageToParent(){
+          //传递字符串
+          //window.opener.postMessage("来自子窗口");
+          //传递对象
+          window.opener.postMessage({            //向父窗口传递
+              type:1,
+              message:"子窗口的问候"
+          });
+      }
+  </script>
+</html>

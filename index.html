@@ -2,18 +2,46 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-    <title>Hello World!</title>
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'"> -->
+    <link rel="stylesheet" href="css/styles.css"/>
+    <title>Mask Demo</title>
   </head>
   <body>
-    <h1>Hello World!</h1>
-    We are using Node.js <span id="node-version"></span>,
-    Chromium <span id="chrome-version"></span>,
-    and Electron <span id="electron-version"></span>.
+    <!--弹窗的实现-->
+    <div>
+      <h2>弹出子窗口</h2>
+      <button onclick="openNewWindow()">弹出</button>
+      <!--弹窗关闭的实现-->
+      <button onclick="closeWindow()">关闭子窗口</button>
+    </div>
 
-    <!-- You can also require other files to run in this process -->
+
+
+
+
+     <!--网页打开，内嵌
+    <div>
+      <h2>webview</h2>
+      <span id="loading"></span>
+      <webview id="wb" src="http://www.baidu.com"/ style="height:400px;" preload="./webview_test/preload.js"/>
+    </div>-->
+
+
+     <!--拖拽实现文件读取-->
+    <div class="for_file_drag" id="drag_test">
+      <h2>File对象</h2>
+      <span>往这里拖文件</span>
+    </div>
+
+
+     <!--查看电脑配置参数-->
+    <div>                   
+      <h2>Process</h2>
+      <button onclick="getProcessInfo()">查看Process信息</button>
+      <!--渲染进程在render里写-->
+    </div>
+
     <script src="./renderer.js"></script>
   </body>
 </html>
